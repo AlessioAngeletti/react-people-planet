@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import agent from '../api/agents';
 
 export const PlanetContext = React.createContext({
@@ -12,11 +13,9 @@ const PlanetContextProvider = (props) => {
 
   const handleSetPlanet = (id) => {
     if (!!id) {
-      console.log(id);
       agent.Planet.details(id).then((res) => {
         if (!!res) {
           setPlanet(res);
-          console.log(res);
         }
       });
     }
