@@ -1,17 +1,18 @@
-import React from 'react';
-import 'semantic-ui-css/semantic.min.css';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css';
+import reportWebVitals from './reportWebVitals';
+
 import './index.css';
 import App from './layout/App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import PlanetContextProvider from './context/planet-context';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <PlanetContextProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </PlanetContextProvider>,
   document.getElementById('root')
 );
 

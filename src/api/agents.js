@@ -17,8 +17,13 @@ const People = {
   list: () => axios.get('/people').then(responseBody),
 };
 
+const Planet = {
+  details: (id) => axios.get(`/planets/${id}/`).then(responseBody),
+};
+
 const agent = {
   People,
+  Planet,
 };
 
 export default agent;

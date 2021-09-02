@@ -1,6 +1,12 @@
+import { useContext } from 'react';
 import { Segment, Grid } from 'semantic-ui-react';
 
+import { getLastNumberFromUrl } from '../../common/util';
+import { PlanetContext } from '../../context/planet-context';
+
 const PeopleListItem = (props) => {
+  const planetContext = useContext(PlanetContext);
+
   return (
     <Segment>
       <Grid>
@@ -20,7 +26,16 @@ const PeopleListItem = (props) => {
           <div>{props.edited}</div>
         </Grid.Column>
         <Grid.Column width='5'>
-          <div>{props.homeworld}</div>
+          <div
+            style={{ cursor: 'pointer' }}
+            onClick={() =>
+              planetContext.handleSetPlanet(
+                getLastNumberFromUrl(props.homeworld)
+              )
+            }
+          >
+            {props.homeworld}
+          </div>
         </Grid.Column>
       </Grid>
     </Segment>

@@ -1,8 +1,8 @@
 import { Container } from 'semantic-ui-react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import PeopleDashboard from '../features/people/PeopleDashboard';
-import HomePage from '../features/home/HomePage';
+import PeopleDashboard from '../pages/people/PeopleDashboard';
+import HomePage from '../pages/home/HomePage';
 import NavBar from '../layout/NavBar';
 
 const App = () => {
